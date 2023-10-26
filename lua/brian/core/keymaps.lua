@@ -40,7 +40,7 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+-- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
@@ -57,3 +57,6 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+keymap.set("n", "zR", require("ufo").openAllFolds)
+keymap.set("n", "zM", require("ufo").closeAllFolds)

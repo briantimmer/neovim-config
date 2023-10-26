@@ -109,10 +109,20 @@ _G.packer_plugins = {
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/Users/brian/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["fzf-lua"] = {
+    loaded = true,
+    path = "/Users/brian/.local/share/nvim/site/pack/packer/start/fzf-lua",
+    url = "https://github.com/ibhagwan/fzf-lua"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -149,6 +159,23 @@ _G.packer_plugins = {
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neo-tree.nvim"] = {
+    config = { "\27LJ\2\n�\2\0\0\5\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\3=\3\r\2B\0\2\1K\0\1\0\15filesystem\19filtered_items\1\0\0\1\0\2\20hide_gitignored\1\18hide_dotfiles\1\vwindow\1\0\2\nwidth\0032\rposition\nright\30default_component_configs\1\0\0\ticon\1\0\0\1\0\2\18folder_closed\b\16folder_open\b\nsetup\rneo-tree\frequire\0" },
+    loaded = true,
+    path = "/Users/brian/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  neogit = {
+    config = { "\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vneogit\frequire\0" },
+    loaded = true,
+    path = "/Users/brian/.local/share/nvim/site/pack/packer/start/neogit",
+    url = "https://github.com/NeogitOrg/neogit"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/brian/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -169,11 +196,6 @@ _G.packer_plugins = {
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/Users/brian/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/nvim-tree/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -185,6 +207,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/brian/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
+  },
+  ["nvim-ufo"] = {
+    loaded = true,
+    path = "/Users/brian/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -200,6 +227,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["promise-async"] = {
+    loaded = true,
+    path = "/Users/brian/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -249,6 +281,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: neo-tree.nvim
+time([[Config for neo-tree.nvim]], true)
+try_loadstring("\27LJ\2\n�\2\0\0\5\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\0025\3\b\0=\3\t\0025\3\v\0005\4\n\0=\4\f\3=\3\r\2B\0\2\1K\0\1\0\15filesystem\19filtered_items\1\0\0\1\0\2\20hide_gitignored\1\18hide_dotfiles\1\vwindow\1\0\2\nwidth\0032\rposition\nright\30default_component_configs\1\0\0\ticon\1\0\0\1\0\2\18folder_closed\b\16folder_open\b\nsetup\rneo-tree\frequire\0", "config", "neo-tree.nvim")
+time([[Config for neo-tree.nvim]], false)
+-- Config for: neogit
+time([[Config for neogit]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vneogit\frequire\0", "config", "neogit")
+time([[Config for neogit]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

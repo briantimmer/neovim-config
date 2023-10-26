@@ -57,7 +57,35 @@ return packer.startup(function(use)
   use("numToStr/Comment.nvim")
 
   -- file explorer
-  use("nvim-tree/nvim-tree.lua")
+  use({
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("neo-tree").setup({
+        default_component_configs = {
+          icon = {
+            folder_closed = "",
+            folder_open = "",
+          },
+        },
+        window = {
+          width = 50,
+          position = "right",
+        },
+        filesystem = {
+          filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = false,
+          },
+        },
+      })
+    end,
+  })
 
   -- vs-code like icons
   use("nvim-tree/nvim-web-devicons")
@@ -119,6 +147,22 @@ return packer.startup(function(use)
 
   use("github/copilot.vim") -- github copilot
   use("vimwiki/vimwiki") -- vimwiki
+
+  -- ufo for code folding
+  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+
+  use({
+    "NeogitOrg/neogit",
+    requires = {
+      "nvim-lua/plenary.nvim", -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim", -- optional
+      "ibhagwan/fzf-lua", -- optional
+    },
+    config = function()
+      require("neogit").setup()
+    end,
+  })
 
   if packer_bootstrap then
     require("packer").sync()
