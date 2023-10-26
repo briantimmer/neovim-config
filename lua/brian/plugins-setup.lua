@@ -114,14 +114,14 @@ return packer.startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-  use({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    requires = {
-      { "nvim-tree/nvim-web-devicons" },
-      { "nvim-treesitter/nvim-treesitter" },
-    },
-  }) -- enhanced lsp uis
+  -- use({
+  --   "glepnir/lspsaga.nvim",
+  --   branch = "main",
+  --   requires = {
+  --     { "nvim-tree/nvim-web-devicons" },
+  --     { "nvim-treesitter/nvim-treesitter" },
+  --   },
+  -- }) -- enhanced lsp uis
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
@@ -149,7 +149,7 @@ return packer.startup(function(use)
   use("vimwiki/vimwiki") -- vimwiki
 
   -- ufo for code folding
-  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+  -- use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
   use({
     "NeogitOrg/neogit",
@@ -161,6 +161,12 @@ return packer.startup(function(use)
     },
     config = function()
       require("neogit").setup()
+    end,
+  })
+  use({
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("ibl").setup()
     end,
   })
 
