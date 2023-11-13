@@ -61,4 +61,4 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 -- keymap.set("n", "zR", require("ufo").openAllFolds)
 -- keymap.set("n", "zM", require("ufo").closeAllFolds)
 
-keymap.set("n", "<leader>git", ":Neogit<CR>")
+keymap.set("n", "<leader>git", ":Neogit kind=auto<CR>")

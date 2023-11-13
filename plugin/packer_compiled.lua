@@ -214,6 +214,18 @@ _G.packer_plugins = {
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["org-bullets.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16org-bullets\frequire\0" },
+    loaded = true,
+    path = "/Users/brian/.local/share/nvim/site/pack/packer/start/org-bullets.nvim",
+    url = "https://github.com/akinsho/org-bullets.nvim"
+  },
+  orgmode = {
+    config = { "\27LJ\2\nõ\2\0\0\5\0\15\0\0266\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0005\2\b\0005\3\5\0005\4\6\0=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0005\2\r\0005\3\f\0=\3\14\2B\0\2\1K\0\1\0\21org_agenda_files\1\0\1\27org_default_notes_file&~/universe/notes/orgs/scratch.org\1\2\0\0\31~/universe/notes/orgs/**/*\21ensure_installed\1\2\0\0\borg\14highlight\1\0\0&additional_vim_regex_highlighting\1\2\0\0\borg\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\21setup_ts_grammar\forgmode\frequire\0" },
+    loaded = true,
+    path = "/Users/brian/.local/share/nvim/site/pack/packer/start/orgmode",
+    url = "https://github.com/nvim-orgmode/orgmode"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -259,6 +271,14 @@ _G.packer_plugins = {
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
+  ["vim-table-mode"] = {
+    commands = { "TableModeToggle" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/brian/.local/share/nvim/site/pack/packer/opt/vim-table-mode",
+    url = "https://github.com/dhruvasagar/vim-table-mode"
+  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/Users/brian/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
@@ -284,11 +304,31 @@ time([[Config for neo-tree.nvim]], false)
 time([[Config for indent-blankline.nvim]], true)
 try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\bibl\frequire\0", "config", "indent-blankline.nvim")
 time([[Config for indent-blankline.nvim]], false)
+-- Config for: org-bullets.nvim
+time([[Config for org-bullets.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16org-bullets\frequire\0", "config", "org-bullets.nvim")
+time([[Config for org-bullets.nvim]], false)
+-- Config for: orgmode
+time([[Config for orgmode]], true)
+try_loadstring("\27LJ\2\nõ\2\0\0\5\0\15\0\0266\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0005\2\b\0005\3\5\0005\4\6\0=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0005\2\r\0005\3\f\0=\3\14\2B\0\2\1K\0\1\0\21org_agenda_files\1\0\1\27org_default_notes_file&~/universe/notes/orgs/scratch.org\1\2\0\0\31~/universe/notes/orgs/**/*\21ensure_installed\1\2\0\0\borg\14highlight\1\0\0&additional_vim_regex_highlighting\1\2\0\0\borg\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\21setup_ts_grammar\forgmode\frequire\0", "config", "orgmode")
+time([[Config for orgmode]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-ts-autotag ]]
 time([[Sequenced loading]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'TableModeToggle', function(cmdargs)
+          require('packer.load')({'vim-table-mode'}, { cmd = 'TableModeToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-table-mode'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('TableModeToggle ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
