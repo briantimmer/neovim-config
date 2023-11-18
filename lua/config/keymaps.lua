@@ -4,3 +4,5 @@
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>git", ":Neogit kind=auto<CR>")
+
+-- TODO: add keymaps for dealing with tabs and splits
