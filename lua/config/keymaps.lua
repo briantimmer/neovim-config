@@ -4,3 +4,6 @@
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>git", ":Neogit kind=auto<CR>")
+
+keymap.set("n", "<a-tab>", ":bn<CR>")
+keymap.set("n", "<leader>tm", ":TableModeToggle<CR>")
